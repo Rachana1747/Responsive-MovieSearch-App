@@ -4,10 +4,10 @@ const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}&`;
 const searchInput = document.getElementById('search-input');
 const searchButton = document.getElementById('search-button');
 const movieContainer = document.getElementById('movie-container');
-const loading = document.getElementById('loading');
+const loading = document.getElementById('loading');//A loading indicator that shows while data is being fetched.
 const movieModal = new bootstrap.Modal(document.getElementById('movieModal'));
 
-searchButton.addEventListener('click', () => {
+searchButton.addEventListener('click',() => {
   const query = searchInput.value.trim();
   if (query) {
     searchMovies(query);
@@ -17,8 +17,8 @@ searchButton.addEventListener('click', () => {
 });
 
 async function searchMovies(query) {
-  movieContainer.innerHTML = '';
-  loading.style.display = 'block';
+  movieContainer.innerHTML = '';//it will clear the movie container
+  loading.style.display = 'block';//A loading indicator that shows while data is being fetched.
 
   try {
     const response = await fetch(`${API_URL}s=${query}`);
